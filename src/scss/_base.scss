@@ -1,0 +1,277 @@
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+html {
+	position: relative;
+	overflow-x: hidden;
+	min-height: 100vh;
+	box-sizing: border-box;
+	font-family: $font-primary;
+	font-size: $html-font-size;
+	scroll-behavior: smooth;
+
+	&.has-cursor,
+	&.has-cursor * {
+		// stylelint-disable-next-line
+		cursor: none !important;
+	}
+
+	&.is-lock-scroll,
+	&.is-lock-scroll body {
+		overflow: hidden;
+	}
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	-webkit-font-smoothing: antialiased;
+	text-decoration-skip: objects;
+	text-rendering: optimizeLegibility;
+	text-size-adjust: 100%;
+	-webkit-tap-highlight-color: transparent;
+	background-color: var(--black-color);
+}
+
+main {
+	flex: 1;
+}
+
+p {
+	margin: 0;
+}
+
+a,
+button {
+	outline: none;
+	transition: $duration-normal;
+	cursor: pointer;
+}
+
+a {
+	text-decoration: none;
+	color: var(--white-color);
+}
+
+figure,
+picture {
+	display: inline-block;
+	margin: 0;
+	line-height: 0;
+
+	img {
+		width: 100%;
+	}
+}
+
+img {
+	vertical-align: top;
+	max-width: 100%;
+	user-select: none;
+}
+
+img[draggable="false"] {
+	pointer-events: none;
+	// stylelint-disable-next-line
+	-webkit-user-drag: none;
+}
+
+fieldset {
+	margin: 0;
+	border: 0;
+	padding: 0;
+}
+
+ul,
+li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	position: relative;
+	margin-bottom: var(--margin-bottom);
+	padding-left: rem(32);
+	font-weight: 400;
+	font-size: rem(16);
+	line-height: rem(19);
+	color: var(--grey-light-color);
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 3px;
+		left: 0;
+		width: 12px;
+		height: 12px;
+		border-radius: 50%;
+		background-color: var(--grey-medium-color);
+	}
+}
+
+video {
+	outline: none;
+	width: 100%;
+	height: 100%;
+}
+
+iframe {
+	display: block;
+}
+
+.btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0;
+	border: 0;
+	padding: 0;
+	font-family: $font-primary;
+	background-color: transparent;
+	transition: $duration-normal;
+	user-select: none;
+	cursor: pointer;
+
+	@include mobile {
+		width: 100%;
+	}
+
+	&:disabled {
+		background-color: var(--grey-medium-color);
+		cursor: default;
+	}
+
+	&__primary {
+		padding: 0 var(--margin-bottom);
+		font-size: rem(14);
+		line-height: rem(48);
+		color: var(--black-color);
+		background-color: var(--white-color);
+		border-radius: var(--border-radius);
+
+		&:focus {
+			box-shadow: 0px 0px 15px rgba(116, 116, 113, 0.5);
+		}
+
+		&:active {
+			background-color: var(--grey-light-color);
+		}
+	
+		@include hover {
+			background-color: var(--grey-light-color);
+			box-shadow: 0px 0px 15px rgba(116, 116, 113, 0.5);
+		}
+	}
+}
+
+.js-lazy-load:not(.is-loaded) {
+	max-height: 50vh;
+}
+
+.container {
+	position: relative;
+	z-index: 1;
+	margin: 0 auto;
+	padding: 0 rem(16);
+	width: 100%;
+	max-width: 100%;
+
+	@include tablet {
+		padding: 0 var(--margin-bottom);
+	}
+
+	@include desktop {
+		max-width: 1216px;
+	}
+}
+
+.site {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh; // fallback
+	// stylelint-disable-next-line
+	min-height: var(--vh);
+	overflow: hidden;
+}
+
+.section {
+	margin: var(--section-top) 0 var(--section-bottom) 0;
+}
+
+.border-bottom {
+	position: relative;
+
+	&::after {
+		content: "";
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: calc(100% + 1rem);
+		border-bottom: 1px solid var(--grey-medium-color);
+
+		@include tablet {
+			width: calc(100% + 2rem);
+		}
+
+		@include desktop {
+			width: 100%;
+		}
+	}
+}
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 rem(-8);
+
+	@include tablet {
+		justify-content: flex-end;
+	}
+
+	@include desktop {
+		margin: 0 rem(-16);
+	}
+}
+
+.col {
+	padding: 0 rem(8);
+
+	@include mobile {
+		&:not(:last-child) {
+			margin-bottom: rem(16);
+		}
+	}
+	
+	@include tablet {
+		max-width: 30%;
+	}
+
+	@include desktop {
+		padding: 0 rem(16);
+	}
+}
+
+.section-bottom {
+	padding-bottom: var(--section-bottom);
+}
+
+/* stylelint-disable */
+/*
+* Немедленно переместите любую анимацию в конечную точку, если пользователь установил свое устройство в положение "prefers reduced motion".
+* Это может привести к плохим(непреднамеренным) последствиям. Удалите по мере необходимости и напишите свой собственный код для prefers-reduced-motion.
+*/
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*:before,
+	*:after {
+		animation-duration: 0.001s !important;
+		animation-delay: 0s !important;
+		transition-duration: 0.001s !important;
+		transition-delay: 0s !important;
+	}
+}
+/* stylelint-enable */

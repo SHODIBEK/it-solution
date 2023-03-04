@@ -1,0 +1,29 @@
+section.wedo.section
+  .container
+    h2.wedo__title.text-shadow.text-fill-color
+      | We provide full-cycle software <br>development
+    .wedo__accardion.accardion
+      table.accardion__items
+        each accardion, index in data.home.accardions
+          tr.accardion__item.js-accardion
+            td.accardion__td
+              .accardion__count
+                | 0#{index+1}
+            td.accardion__td
+              .accardion__title!=accardion.title
+            td.accardion__td.accardion__trigger.js-accardionTrigger
+              .accardion__text!=accardion.text
+            td.accardion__td
+              .accardion__button
+    .section-bottom.section.border-bottom
+      .h2.text-shadow.text-fill-color
+        | What we do
+      .h2.color-grey-medium
+        | We develop software from scratch <br>according to customer needs.
+      .row
+        .col
+          p
+            | We create complex information systems, establish partnerships with tech companies and develop programs and applications. Our architects, team leads, developers, and testing engineers use their large-scale experience in developing each software product. Our specialists participate in the procedure of identifying software engineering requirements, developing software specifications, and solution development.
+        .col
+          p
+            | Our core competence is software development. There are many kinds of ready-made commercial projects which satisfy customers' needs to a greater or lesser extent. However, there are some areas of application in which there is no trade-off between limited finished product functionality, high-performance requirements, and usability. There's also a demand for Image-building projects for customers who can’t allow themselves to use basic ready-made products. Such type of projects is exactly what we specialize in.

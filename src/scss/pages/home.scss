@@ -1,0 +1,140 @@
+.hero {
+	@include mobile {
+		margin-top: rem(24);
+	}
+	&__title {
+		@include desktop {
+			max-width: 703px;
+		}
+	}
+
+	&-image {
+		&__big {
+			width: 100%;
+			height: auto;
+			margin-top: var(--margin-bottom);
+		}
+
+		&__small {
+			margin: rem(96) auto rem(56);
+			max-width: 343px;
+			display: block;
+
+			@include tablet {
+				margin: rem(48) auto var(--margin-bottom);
+				max-width: 506px;
+			}
+
+			@include desktop {
+				max-width: 1002px;
+			}
+		}
+	}
+
+	&__block {
+		padding-bottom: var(--section-bottom);
+	}
+}
+
+.wedo {
+	&__accardion {
+		padding-bottom: var(--section-bottom);
+	}
+}
+
+.software {
+	&__block {
+		display: flex;
+		flex-direction: column;
+
+		@include tablet {
+			flex-direction: row;
+		}
+	}
+
+	&__image {
+		&:not(:last-child) {
+			margin-bottom: var(--margin-bottom);
+		}
+
+		@include tablet {
+			margin-right: rem(60);
+			flex: 0 0 419px;
+			max-width: 419px;
+
+			&:not(:last-child) {
+				margin-bottom: 0;
+			}
+		}
+
+		@include desktop {
+			margin-right: rem(180);
+			flex: 0 0 633px;
+			max-width: 633px;
+		}
+	}
+
+	&__item {
+		&:not(:last-child) {
+			margin-bottom: var(--section-bottom);
+		}
+
+		&-title {
+			@include desktop {
+				width: 55%;
+			}
+		}
+	}
+}
+
+.techno {
+	&__image {
+		margin-bottom: var(--margin-bottom);
+	}
+
+	&__item {
+		@include mobile {
+			padding-bottom: var(--margin-bottom);
+		}
+		&:not(:last-child) {
+			margin-bottom: var(--margin-bottom);
+		}
+	}
+
+	&__block {
+		margin-bottom: var(--margin-bottom);
+
+		@include tablet {
+			margin-left: rem(261);
+			max-width: 289px;
+		}
+
+		@include desktop {
+			margin-left: rem(443);
+			max-width: 495px;
+		}
+	}
+
+	&__lists {
+		@include tablet {
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			grid-column-gap: 16px;
+		}
+
+		@include desktop {
+			grid-column-gap: var(--margin-bottom);
+		}
+
+		&--two {
+			@include tablet {
+				margin-left: 174px;
+				grid-template-columns: repeat(2, 1fr);
+			}
+
+			@include desktop {
+				margin-left: 296px;
+			}
+		}
+	}
+}

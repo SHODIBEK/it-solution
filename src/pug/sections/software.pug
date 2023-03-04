@@ -1,0 +1,11 @@
+section.software.section
+  .container
+    h1.software__title.text-shadow.text-fill-color
+      | Industrial software
+    .software__items
+      each soft in data.home.softwares
+        .software__item.section-bottom.border-bottom
+          .software__item-title.h2.text-shadow.text-fill-color!=soft.title
+          .software__block
+            +picture(soft.image, 'png', 'software__image', 'icons')
+            p.software__text!=soft.text

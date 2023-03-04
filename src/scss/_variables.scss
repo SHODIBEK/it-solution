@@ -1,0 +1,45 @@
+// Variables
+//
+// Variables should follow the `$component-state-property-size` formula for
+// consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
+
+
+// COLORS
+$color-black: #000;
+$color-white: #fff;
+$color-gray: #eee;
+
+// FONTS
+// stylelint-disable-next-line
+$font-primary: -apple-system, blinkmacsystemfont, "Graphik LC Web", roboto, oxygen, ubuntu, cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+$html-font-size: 16px;
+
+// EASING TRANSITIONS
+$duration-normal: 0.4s;
+$easing-back-out: cubic-bezier(0.25, 0.74, 0.22, 1.1); // http://cubic-bezier.com/#.25,.74,.22,1.1
+$easing-back-in: cubic-bezier(0.47, -0.1, 0.5, -0.06); // http://cubic-bezier.com/#.47,-0.1,.5,-.06
+$easing-out: ease-out;
+$easing-in: ease-in;
+
+// Settings
+$desktop: 1147;
+$desktop-xl: 1800;
+$laptop: 1440;
+$tablet: 768;
+$mobile: 320;
+$desktop-vh: 750;
+
+
+:root {
+  --black-color: #1a1a19;
+  --white-color: #f2f2f2;
+  --grey-dark-color: #3b3b3a;
+  --grey-medium-color: #747471;
+  --grey-light-color: #c5c5c4;
+  --border-radius: 64px;
+  --section-top: 3rem;
+  --section-bottom: 4rem;
+  --margin-bottom: 2rem;
+  --text-shadow: 0px 0px 15px rgba(116, 116, 113, 0.5);
+  --linear-gradient: linear-gradient(270deg, #868B92 9.67%, #BFB3A3 56.2%, #C5C5C4 99%);
+}

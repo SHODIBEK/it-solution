@@ -1,0 +1,149 @@
+.is-hidden {
+	// stylelint-disable-next-line declaration-no-important
+	display: none !important;
+}
+
+.is-hide {
+	// stylelint-disable-next-line declaration-no-important
+	opacity: 0;
+}
+
+.for-desktop {
+	@include devices {
+		// stylelint-disable-next-line declaration-no-important
+		display: none !important;
+	}
+}
+
+.for-tablet {
+	@include desktop {
+		// stylelint-disable-next-line declaration-no-important
+		display: none !important;
+	}
+
+	@include mobile {
+		// stylelint-disable-next-line declaration-no-important
+		display: none !important;
+	}
+}
+
+.for-mobile {
+	@include desktop {
+		// stylelint-disable-next-line declaration-no-important
+		display: none !important;
+	}
+
+	@include tablet {
+		// stylelint-disable-next-line declaration-no-important
+		display: none !important;
+	}
+}
+
+.for-devices {
+	@include desktop {
+		// stylelint-disable-next-line declaration-no-important
+		display: none !important;
+	}
+}
+
+.clearfix {
+	overflow: auto;
+
+	&::after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+.visually-hidden {
+	position: absolute;
+	overflow: hidden;
+	margin: -1px;
+	width: 1px;
+	height: 1px;
+	clip: rect(0 0 0 0);
+}
+
+.text-center {
+	text-align: center!important;
+}
+
+.text-black {
+	color: #000!important;
+}
+
+.font-medium {
+	font-weight: 500!important;
+}
+
+.d-flex {
+	display: flex!important;
+}
+
+.justify-content-between {
+	justify-content: space-between!important;
+}
+
+.align-center {
+	align-items: center!important;
+}
+
+.align-end {
+	align-items: flex-end!important;
+}
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: -10px;
+	margin-right: -10px;
+	
+	&:not(:last-child) {
+		margin-bottom: rem(20);
+	}
+}
+
+.col {
+	position: relative;
+	width: 100%;
+	padding-right: 10px;
+	padding-left: 10px;
+
+	&-6 {
+		@include tablet {
+			flex: 0 0 50%;
+			max-width: 50%;
+		}
+	}
+}
+
+.sm-hidden {
+	display: none;
+
+	@include tablet {
+		display: block;
+	}
+}
+
+.lg-hidden {
+	display: block;
+
+	@include tablet {
+		display: none;
+	}
+}
+
+/* stylelint-disable */
+.dont-break-out {
+	// Технически это одно и то же, но используйте и то, и другое
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	// Это самое опасное в WebKit, так как оно ломает вещи везде, где бы они ни были
+	word-break: break-all;
+	// Вместо этого используйте этот нестандартный:
+	word-break: break-word;
+	// Добавляет дефис там, где слово ломается, если поддерживается
+	hyphens: auto;
+}
+/* stylelint-enable */
