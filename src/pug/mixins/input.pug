@@ -1,0 +1,7 @@
+mixin input(id, name, label, placeholder, types, textarea)
+  .form__group&attributes(attributes)
+    label.form__label(for!=id)!=label
+    if(!textarea)
+      input.form__input(type!=types ? types : 'text' name!=name id!=id placeholder!=placeholder)
+    else
+      textarea.form__textarea(name!=name id!=id placeholder!=placeholder)

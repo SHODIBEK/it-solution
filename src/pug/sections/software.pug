@@ -1,11 +1,11 @@
 section.software.section
   .container
-    h1.software__title.text-shadow.text-fill-color
+    h1.software__title.text-shadow.text-fill-color(data-aos="fade-up")
       | Industrial software
     .software__items
-      each soft in data.home.softwares
-        .software__item.section-bottom.border-bottom
+      each soft, key in data.home.softwares
+        .software__item.section-bottom.border-bottom(data-aos="fade-up" data-aos-delay=`${key+1}00`)
           .software__item-title.h2.text-shadow.text-fill-color!=soft.title
           .software__block
-            +picture(soft.image, 'png', 'software__image', 'icons')
-            p.software__text!=soft.text
+            +picture(soft.image, 'png', 'software__image', 'icons')(data-aos="fade-right" data-aos-delay=`${key+1}00`)
+            p.software__text(data-aos="fade-left" data-aos-delay=`${key+1}00`)!=soft.text

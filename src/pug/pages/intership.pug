@@ -1,1 +1,30 @@
 main.main
+  .internship.section
+    .container
+      .internship__wrapper.section-bottom
+        h1.text-shadow.text-fill-color(data-aos="fade-up" data-aos-delay=`200`)
+          | Internship
+        .internship__block.half-block.ml-auto
+          h2.h2.text-fill-color(data-aos="fade-up" data-aos-delay=`400`)
+            | We are looking for a specialist with experience in both bare metal infrastructure and virtualized IT infrastructure (for developing and testing theories).
+        .internship__items.grid-items
+          each list, key in data.internship.lists
+            .internship__item(data-aos="fade-up" data-aos-delay=`${key+1}00`)
+              p.internship__title.color-grey-medium!=list.title
+              p.internship__subtitle!=list.subtitle
+        .internship__block.half-block.ml-auto.lists
+          h2.lists__title.h2.text-fill-color(data-aos="fade-up" data-aos-delay=`200`)
+            | We offer:
+          each list, key in data.internship.items
+            .lists__list(data-aos="fade-up" data-aos-delay=`${key+1}00`)!=list
+      .internship__contact.section.section-bottom.border-bottom
+        h1.text-shadow.text-fill-color(data-aos="fade-up" data-aos-delay=`200`)
+          | Contact us:
+        .half-block.ml-auto
+          form(action="/" method="POST").contact__form
+            +input('name', 'name', 'Name:', 'Name')(data-aos="fade-up" data-aos-delay=`200`).contact__group
+            +input('email', 'email', 'Email:', 'Email', 'email')(data-aos="fade-up" data-aos-delay=`400`).contact__group
+            +input('messages', 'messages', 'Message:', 'Message', '', true)(data-aos="fade-up" data-aos-delay=`500`).contact__textarea
+            .contact__form-buttons(data-aos="fade-up" data-aos-delay=`700`)
+              button(type="submit").btn.btn__primary
+                | Contact us

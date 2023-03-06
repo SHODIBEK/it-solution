@@ -2,13 +2,13 @@ main.main
   .about.section
     .container
       .about__wrapper.section-bottom.border-bottom
-        h1.about__title.text-shadow.text-fill-color
+        h1.about__title.text-shadow.text-fill-color(data-aos="fade-up")
           | Who we are
         .about__row.row
-          .col.about__col
+          .col.about__col(data-aos="fade-up" data-aos-delay=`200`)
             p
               | We specialize in manufacturing and integration of IT services contributing to the growth of business efficiency. Our team has extensive and unique experience in the IT services market using flexible software development methods. Our priority is the implementation of projects of any complexity in the most efficient way.
-          .col.about__col
+          .col.about__col(data-aos="fade-up" data-aos-delay=`400`)
             p
               | We use both proven solutions and the most advanced technologies to achieve the goals you set. Our team of experienced specialists offers an integrated development approach for each step of the project. This strategic approach significantly reduces risks and delivers software that meets customer requirements on time and on budget.
-        +picture('about-image', 'png', 'about__image')
+        +picture('about-image', 'png', 'about__image')(data-aos="zoom-in")

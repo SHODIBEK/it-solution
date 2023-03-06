@@ -116,20 +116,10 @@
 	}
 
 	&__lists {
-		@include tablet {
-			display: grid;
-			grid-template-columns: repeat(4, 1fr);
-			grid-column-gap: 16px;
-		}
-
-		@include desktop {
-			grid-column-gap: var(--margin-bottom);
-		}
 
 		&--two {
 			@include tablet {
 				margin-left: 174px;
-				grid-template-columns: repeat(2, 1fr);
 			}
 
 			@include desktop {

@@ -1,11 +1,11 @@
 section.wedo.section
   .container
-    h2.wedo__title.text-shadow.text-fill-color
+    h2.wedo__title.text-shadow.text-fill-color(data-aos="fade-up")
       | We provide full-cycle software <br>development
     .wedo__accardion.accardion
       table.accardion__items
         each accardion, index in data.home.accardions
-          tr.accardion__item.js-accardion
+          tr.accardion__item.js-accardion(data-aos="fade-up" data-aos-delay=`${index+1}00`)
             td.accardion__td
               .accardion__count
                 | 0#{index+1}
@@ -16,14 +16,14 @@ section.wedo.section
             td.accardion__td
               .accardion__button
     .section-bottom.section.border-bottom
-      .h2.text-shadow.text-fill-color
+      .h2.text-shadow.text-fill-color(data-aos="fade-up")
         | What we do
-      .h2.color-grey-medium
+      .h2.color-grey-medium(data-aos="fade-up" data-aos-delay=`200`)
         | We develop software from scratch <br>according to customer needs.
       .row
-        .col
+        .col(data-aos="fade-up" data-aos-delay=`300`)
           p
             | We create complex information systems, establish partnerships with tech companies and develop programs and applications. Our architects, team leads, developers, and testing engineers use their large-scale experience in developing each software product. Our specialists participate in the procedure of identifying software engineering requirements, developing software specifications, and solution development.
-        .col
+        .col(data-aos="fade-up" data-aos-delay=`400`)
           p
             | Our core competence is software development. There are many kinds of ready-made commercial projects which satisfy customers' needs to a greater or lesser extent. However, there are some areas of application in which there is no trade-off between limited finished product functionality, high-performance requirements, and usability. There's also a demand for Image-building projects for customers who can’t allow themselves to use basic ready-made products. Such type of projects is exactly what we specialize in.

@@ -294,52 +294,43 @@ html(class=html.classList)&attributes(html.attrs)
 			script(src!=`${baseDir}js/vendor.js?v=${Date.now()}`)
 			script(src!=`${baseDir}js/main.js?v=${Date.now()}`)
 			if (login)
-				// script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/localization/messages_ru.min.js")
 				script. 
 					$('form').each(function() {
-						$(this).validate({
+						const validate = $(this).validate({
 							ignore: "",
 							rules: {
-								login: {
+								name: {
 									required: true,
 								},
-								password: {
-									minlength: 5,
+								email: {
+									required: true,
+									email: true
 								},
-								password_confirm: {
-									minlength: 5,
-									equalTo: "#password"
-								},
-								terms: {
+								messages: {
 									required: true,
 								}
 							},
 							errorElement: 'span',
-							errorPlacement: function(error, element) {
-								if (element.is('#terms')) {
-									$(element).next().addClass('error');
-									$(error).appendTo(element);
-								}
-								else {
-									$(element).after(error);
-								}
+							submitHandler: function (form) {
+								$.ajax({
+									type: $(form).attr('method'),
+									url: './send.php',
+									data: $(form).serialize(),
+									dataType : 'json',
+									success: function(data)   
+									{
+										$('#success').addClass('is-open');
+									},
+									error: function (xhr, status, error) {
+										$('#error-form').addClass('is-open');
+										console.log(xhr.status, error)
+									}
+								});
+
+								return false;
 							}
 						});
-					});
-			if (confirm)
-				script.
-					$('#confirm').validate({
-						ignore: "",
-						rules: {
-							confirm: {
-								required: true,
-								minlength: 4,
-							}
-						},
-						errorElement: 'span',
-						submitHandler: {
-							function (form) {
-							}
-						}
+
+						validate.resetForm();
 					});
 	block body-end

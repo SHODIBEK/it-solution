@@ -1,0 +1,12 @@
+.popup#error-form._overlay-bg(data-popup="error-form")
+  .popup__wrapper
+    button(type="button").btn.popup__close.button-close
+    .popup__block
+      img.popup__icon(src="./images/icons/attention.svg", alt="success icon" width="60" height="60")
+      .h2.text-shadow.text-fill-color
+        | Oops, something went wrong!!!
+      .p
+        | Please try again later.
+    .popup__footer
+      button(type="submit").btn.btn__primary.popup__btn.button-close
+        | OK

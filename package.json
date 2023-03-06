@@ -69,6 +69,7 @@
 	"dependencies": {
 		"@babel/plugin-transform-runtime": "7.14.5",
 		"@babel/runtime": "7.14.8",
+		"aos": "3.0.0-beta.6",
 		"body-scroll-lock": "3.1.5",
 		"core-js": "3.15.2",
 		"husky": "7.0.1",

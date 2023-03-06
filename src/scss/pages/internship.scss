@@ -1,0 +1,37 @@
+.internship {
+  &__block {
+    &:not(:last-child) {
+      margin-bottom: var(--margin-bottom);
+    }
+  }
+
+  &__title {
+    &:not(:last-child) {
+      margin-bottom: rem(8);
+    }
+  }
+
+  &__subtitle {
+    color: #fff;
+  }
+
+  &__item {
+    margin-bottom: var(--margin-bottom);
+  }
+}
+
+.lists {
+  &__title {
+    &:not(:last-child) {
+      margin-bottom: rem(8);
+    }
+  }
+
+  &__list {
+    padding: rem(8) 0;
+    font-size: rem(16);
+    line-height: rem(19);
+    color: #fff;
+    border-bottom: 1px solid var(--grey-dark-color);
+  }
+}

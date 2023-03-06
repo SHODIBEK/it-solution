@@ -1,0 +1,19 @@
+.contact {
+  &__group {
+    @include desktop {
+      width: 412px;
+    }
+  }
+
+  &__textarea {
+    @include desktop {
+      width: 559px;
+    }
+  }
+
+  &__form {
+    &-buttons {
+      margin-top: var(--margin-bottom);
+    }
+  }
+}

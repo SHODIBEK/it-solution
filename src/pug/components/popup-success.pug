@@ -1,0 +1,14 @@
+.popup#success._overlay-bg(data-popup="success")
+  .popup__wrapper
+    button(type="button").btn.popup__close.button-close
+    .popup__block
+      img.popup__icon(src="./images/icons/good.svg", alt="success icon" width="60" height="60")
+      .h2.text-shadow.text-fill-color
+        | Success!!!
+      .p
+        | Message sent successfully. 
+        br
+        | Our staff will answer you within a few minutes.
+    .popup__footer
+      button(type="submit").btn.btn__primary.popup__btn.button-close
+        | OK

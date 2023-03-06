@@ -259,6 +259,30 @@ iframe {
 	padding-bottom: var(--section-bottom);
 }
 
+.half-block {
+	@include tablet {
+		width: 60%;
+	}
+}
+
+.grid-items {
+	@include tablet {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		grid-column-gap: 16px;
+	}
+
+	@include desktop {
+		grid-column-gap: var(--margin-bottom);
+	}
+
+	&--two {
+		@include tablet {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+}
+
 /* stylelint-disable */
 /*
 * Немедленно переместите любую анимацию в конечную точку, если пользователь установил свое устройство в положение "prefers reduced motion".

@@ -18,7 +18,7 @@ const openPopupWindows = (target) => {
 		}
 
 		popup.classList.add("is-open");
-		helpers.lockScroll(true, helpers.$body.find('.modal'), 'header');
+		helpers.lockScroll(true, helpers.$body.find('.popup'), 'header');
 	}
 }
 
@@ -26,7 +26,7 @@ const closePopupWindows = (target) => {
 	if ( target.classList.contains("_overlay-bg") || target.closest(".button-close")) {
 		const popup = target.closest("._overlay-bg");
 
-		helpers.lockScroll(false, helpers.$body.find('.modal'), 'header')
+		helpers.lockScroll(false, helpers.$body.find('.popup'), 'header')
 
 		popup.classList.remove("is-open");
 	}

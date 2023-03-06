@@ -1,1 +1,14 @@
 main.main
+  .contact.section
+    .container
+      .contact__wrapper.section-bottom.border-bottom
+        h1.text-shadow.text-fill-color(data-aos="fade-up" data-aos-delay=`200`)
+          | Contact us:
+        .half-block.ml-auto
+          form(action="/" method="POST").contact__form
+            +input('name', 'name', 'Name:', 'Name')(data-aos="fade-up" data-aos-delay=`400`).contact__group
+            +input('email', 'email', 'Email:', 'Email', 'email')(data-aos="fade-up" data-aos-delay=`600`).contact__group
+            +input('messages', 'messages', 'Message:', 'Message', '', true)(data-aos="fade-up" data-aos-delay=`800`).contact__textarea
+            .contact__form-buttons(data-aos="fade-up" data-aos-delay=`900`)
+              button(type="submit").btn.btn__primary
+                | Contact us

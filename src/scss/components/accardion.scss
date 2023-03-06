@@ -32,6 +32,7 @@
       .accardion__trigger {
         opacity: 1;
         visibility: visible;
+        transition: 0.3s ease-in-out;
       }
 
       .accardion__button {
@@ -109,6 +110,7 @@
     max-height: 0;
     padding: 0;
     display: none;
+    transition: 0.3s ease-in-out;
 
     @include desktop {
       display: table-cell!important;

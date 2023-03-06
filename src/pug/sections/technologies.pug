@@ -1,21 +1,21 @@
 section.techno.section
   .container
-    h1.techno__title.text-shadow.text-fill-color
+    h1.techno__title.text-shadow.text-fill-color(data-aos="fade-up")
       | Big Data technologies
     .techno__items
       .techno__item.border-bottom
-        +picture('hadoop', 'png', 'techno__image')
-        .techno__block
+        +picture('hadoop', 'png', 'techno__image')(data-aos="fade-up")
+        .techno__block(data-aos="fade-up" data-aos-delay=`100`)
           p.techno__text
             | Hadoop is a fundamental technology for storing and processing big data. It’s a collection of open-source software utilities and libraries that provides a framework for developing and executing distributed programs. We use Hadoop to provide the following software solutions:
-        ul.techno__lists
-          each techno in data.home.technos[0]
-            li.techno__list!=techno
+        ul.techno__lists.grid-items
+          each techno, key in data.home.technos[0]
+            li.techno__list(data-aos="fade-up" data-aos-delay=`${key+1}00`)!=techno
       .techno__item.border-bottom
-        +picture('spark', 'png', 'techno__image')
-        .techno__block
+        +picture('spark', 'png', 'techno__image')(data-aos="fade-up")
+        .techno__block(data-aos="fade-up" data-aos-delay=`100`)
           p.techno__text
             | Spark is an open-source cluster computing platform similar to Hadoop. In addition to interactive queries, Spark supports distributed in-memory datasets, optimizing the solution of iterative problems.
-        ul.techno__lists.techno__lists--two
-          each techno in data.home.technos[1]
-            li.techno__list!=techno
+        ul.techno__lists.grid-items.grid-items--two.techno__lists--two
+          each techno, key in data.home.technos[1]
+            li.techno__list(data-aos="fade-up" data-aos-delay=`${key+1}00`)!=techno
